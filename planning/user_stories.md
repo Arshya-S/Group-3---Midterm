@@ -47,9 +47,11 @@ ROUTES
 - DELETE  DELETE  /lists/:id
 
 
-WIREFRAMES
+WIREFRAMES (We have two interfaces: one for total user lists and one for within a list).
 
-![Mock Style](https://github.com/Arshya-S/Group-3---Midterm/blob/master/planning/Screenshot%202023-06-30%20at%204.48.37%20PM.png?raw=true)
+![Mock Style](https://github.com/Arshya-S/Group-3---Midterm/blob/master/planning/Screenshot%202023-06-30%20at%205.40.02%20PM.png?raw=true)
+
+![Mock Style](https://github.com/Arshya-S/Group-3---Midterm/blob/master/planning/Screenshot%202023-06-30%20at%205.40.14%20PM.png?raw=true)
 
 
 ERD
