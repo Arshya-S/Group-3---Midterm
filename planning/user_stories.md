@@ -43,8 +43,15 @@ ROUTES
 - BROWSE  GET     /lists
 - READ    GET     /lists/:id
 - EDIT    PATCH   /lists/:id
-- ADD     POST    /lists
+- ADD     POST    /lists/:id
 - DELETE  DELETE  /lists/:id
+
+WIREFRAMES
+
+
+![Mock Style](https://github.com/Arshya-S/Group-3---Midterm/blob/master/planning/Screenshot%202023-06-30%20at%204.48.37%20PM.png?raw=true)
+
+
 
 
 
