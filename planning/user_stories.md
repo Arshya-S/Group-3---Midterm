@@ -40,11 +40,11 @@ Stretch:  Given that I'm logged in, when I complete a list, then the list goes t
 
 ROUTES  
 
-BROWSE  GET     /lists
-READ    GET     /lists/:id
-EDIT    PATCH   /lists/:id
-ADD     POST    /lists
-DELETE  DELETE  /lists/:id
+- BROWSE  GET     /lists
+- READ    GET     /lists/:id
+- EDIT    PATCH   /lists/:id
+- ADD     POST    /lists
+- DELETE  DELETE  /lists/:id
 
 
 
