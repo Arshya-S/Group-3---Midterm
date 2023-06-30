@@ -46,10 +46,14 @@ ROUTES
 - ADD     POST    /lists/:id
 - DELETE  DELETE  /lists/:id
 
+
 WIREFRAMES
 
-
 ![Mock Style](https://github.com/Arshya-S/Group-3---Midterm/blob/master/planning/Screenshot%202023-06-30%20at%204.48.37%20PM.png?raw=true)
+
+
+ERD
+![Mock Style](https://github.com/Arshya-S/Group-3---Midterm/blob/master/planning/Screenshot_2023-06-30_at_4.50.22_PM.png?raw=true)
 
 
 
