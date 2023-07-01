@@ -57,9 +57,9 @@ Stretch: Users can share lists to other users
 ### WIREFRAMES
 
 
-![Mock Style](https://github.com/Arshya-S/Group-3---Midterm/blob/master/planning/Screenshot%202023-06-30%20at%205.40.14%20PM.png?raw=true)
+![Mock Style](https://github.com/Arshya-S/Smart-TODO-List/blob/master/planning/Main-Page.png?raw=true)
 
-![Mock Style](https://github.com/Arshya-S/Smart-TODO-List/blob/master/planning/Screenshot%202023-07-01%20at%202.19.05%20PM.png?raw=true)
+![Mock Style](https://github.com/Arshya-S/Smart-TODO-List/blob/master/planning/Main-Page-Sketch.png?raw=true)
 
 
 
@@ -68,7 +68,7 @@ Stretch: Users can share lists to other users
 
 ERD
 
-![Mock Style](https://github.com/Arshya-S/Smart-TODO-List/blob/master/planning/Screenshot%202023-07-01%20at%202.19.30%20PM.png?raw=true)
+![Mock Style](https://github.com/Arshya-S/Smart-TODO-List/blob/master/planning/new-ERD.png?raw=true)
 
 
 
