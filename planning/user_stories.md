@@ -56,7 +56,7 @@ WIREFRAMES (We have two interfaces: one for total user lists and one for within 
 
 ERD
 
-![Mock Style](https://github.com/Arshya-S/Group-3---Midterm/blob/master/planning/erd.png)
+![Mock Style](https://github.com/Arshya-S/Group-3---Midterm/raw/master/planning/erd.png)
 
 
 
