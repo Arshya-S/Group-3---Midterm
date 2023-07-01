@@ -22,10 +22,12 @@
 <body>
   <%- include('partials/_header') %>
   <main>
-    <section class="task-submission">
-        <textarea name="task" id="task-input"></textarea>
-        <button type="submit">Create</button>
-    </section>
+    <form class="task-submission">
+      <label for="task-input">Enter a new task:</label>
+      <textarea name="task" id="task-input"></textarea>
+      <button type="submit">Create</button>
+    </form>
    </main>
 </body>
+
 </html>
