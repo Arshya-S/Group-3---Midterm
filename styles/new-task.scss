@@ -1,0 +1,16 @@
+.task-submission {
+  width: 250px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#task-input {
+  border: none;
+  border-bottom: 2.5px solid black;
+  resize: none;
+  outline: none;
+  overflow: hidden;
+}
