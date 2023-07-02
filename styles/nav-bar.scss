@@ -1,0 +1,19 @@
+header {
+  width: 100%
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background: darkcyan;
+  padding: 2em 3em;
+  font-size: large;
+  font-weight: 800;
+  color: white;
+}
+
+a.nav-buttons {
+  color: white;
+  text-decoration: none;
+  padding: 0 1em;
+}
