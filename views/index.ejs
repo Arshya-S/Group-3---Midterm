@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/new-task.css" />
+  <link rel="stylesheet" href="/styles/list-items.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -22,15 +23,13 @@
 <body>
   <%- include('partials/_header') %>
   <main>
-    <form class="task-submission">
+    <form method="POST" action="/lists" class="task-submission">
       <label for="task-input">Enter a new task:</label>
       <textarea name="task" id="task-input"></textarea>
       <button type="submit">Create</button>
     </form>
-    <section class="old-tasks">
-        <!-- <div class="old-task">${data.task}</div> -->
-    </section>
-   </main>
+  <section id="to-do-container"></section>
+  </main>
 </body>
 
 </html>

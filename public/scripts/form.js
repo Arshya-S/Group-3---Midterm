@@ -6,7 +6,7 @@ $(() => {
   ];
 
   const renderTasks = function(tasks) {
-    const $task = $('.old-tasks');
+    const $task = $('#to-do-container');
     $task.empty();
 
     for (const task of tasks) {
@@ -36,7 +36,7 @@ $(() => {
     const data = $('.task-submission').serialize();
 
     $.ajax({
-      url: "/",
+      url: "/lists",
       method: 'POST',
       data: data,
       success: () => {
@@ -50,7 +50,7 @@ $(() => {
 
   const loadTasks = () => {
     $.ajax({
-      url: "/",
+      url: "/lists",
       method: 'GET',
       success: (data) => {
         renderTasks(data);

@@ -1,5 +1,3 @@
-// Client facing scripts here
-
 const renderToWatch = (toWatchItems) => {
   const $container = $('#to-do-container').empty();
 
