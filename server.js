@@ -39,7 +39,7 @@ const navItems = require('./routes/nav-items');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
-app.use('/lists/:id', navItems);
+app.use('/lists/1', navItems);
 // Note: mount other resources here, using the same pattern above
 
 // Home page

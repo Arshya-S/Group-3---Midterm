@@ -9,10 +9,10 @@ const getUserWatch = (id) => {
   WHERE user_id = $1
   AND category_id = $2`,[id,1])
     .then(data => {
-      return data.rows[0];
+      return data.rows;
     })
     .catch(err => {
-      console.log(err);
+      console.log('Query Error: ', err);
     })
 }
 
