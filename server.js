@@ -33,6 +33,7 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const listsApiRoutes = require('./routes/lists-api.js');
 const navItems = require('./routes/nav-items');
+const userLogin = require('./routes/login');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -43,6 +44,7 @@ app.use('/users', usersRoutes);
 app.use('/lists/1', navItems);
 // Note: mount other resources here, using the same pattern above
 app.use('/lists', listsApiRoutes);
+app.use('/login', userLogin);
 
 // Home page
 // Warning: avoid creating more routes in this file!
