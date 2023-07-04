@@ -27,7 +27,7 @@ $(() => {
 
   $('.task-submission').on("submit", function(event) {
     event.preventDefault();
-
+    console.log("hi");
     if ($('#task-input').val() === "" || $('#task-input').val() === null) {
       alert(`Please type in a task`);
       return;
@@ -36,7 +36,7 @@ $(() => {
     const data = $('.task-submission').serialize();
 
     $.ajax({
-      url: "/lists",
+      url: 'http://localhost:8080/lists',
       method: 'POST',
       data: data,
       success: () => {
@@ -50,9 +50,10 @@ $(() => {
 
   const loadTasks = () => {
     $.ajax({
-      url: "/lists",
+      url: 'http://localhost:8080/lists',
       method: 'GET',
       success: (data) => {
+
         renderTasks(data);
       }
     });
