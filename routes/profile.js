@@ -1,15 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const loginQueries = require('../db/queries/login');
+const profileQueries = require('../db/queries/profile');
 
 router.get('/', (req, res) => {
-  return res.render('login', { user: req.session['user'] });
+  return res.render('profile', { user: req.session['user'] });
 });
 
 router.post('/', (req, res) => {
 
-  loginQueries.getUserByEmailAndPassword(req.body).then(data => {
-    console.log({ data });
+  profileQueries.updateUserProfile(req.body).then(data => {
     const user = data[0];
     req.session = {
       user: {
@@ -19,12 +18,13 @@ router.post('/', (req, res) => {
         password: user.password
       }
     };
-    res.redirect('/');
     res.render('index', { user: req.session['user'] });
-    return;
-  }).catch(() => {
-    return res.status(404).send('Unable to login, please check email/password');
   });
+  setTimeout(() => {
+    res.redirect('logout');
+  }, 2000);
 });
+
+
 
 module.exports = router;

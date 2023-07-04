@@ -1,0 +1,16 @@
+form.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-top: 5em;
+}
+
+button.update-profile {
+  width: 45%;
+  align-self: center;
+}
+
+label.user-id,
+input#user-id {
+  display: none;
+}
