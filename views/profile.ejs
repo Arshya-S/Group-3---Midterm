@@ -26,7 +26,14 @@
   <%- include('partials/_header') %>
   <main>
     <form method="POST" action="/profile" class="user-profile">
-      <label for="user-name">User Name</label></br>
+      <label class="user-id" for="user-id">User ID</label></br>
+      <input
+        value="<%- user.id %>"
+        id="user-id"
+        name="id"
+        readonly
+      /></br>
+      <label for="user-name">Username</label></br>
       <input
         value="<%- user.name %>"
         name="name"
@@ -41,7 +48,7 @@
       <input
         type="password"
         name="password"
-        placeholder="New Password"
+        value="<%- user.password %>"
       /><br>
 
       <button type="submit" class="update-profile">Update</button>

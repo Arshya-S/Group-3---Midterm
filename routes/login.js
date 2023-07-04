@@ -12,6 +12,7 @@ router.post('/', (req, res) => {
     const user = data[0];
     req.session = {
       user: {
+        id: user.id,
         name: user.name,
         email: user.email,
         password: user.password
@@ -20,7 +21,7 @@ router.post('/', (req, res) => {
     res.redirect('/');
     res.render('index', { user: req.session['user'] });
     return;
-  }).catch(error => {
+  }).catch(() => {
     return res.status(404).send('Unable to login, please check email/password');
   });
 });

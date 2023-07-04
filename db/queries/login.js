@@ -13,7 +13,7 @@ const getUserByEmailAndPassword = (body) => {
     .then(data => {
       return data.rows;
     })
-    .catch(error => {
+    .catch(() => {
       return null;
     });
 };

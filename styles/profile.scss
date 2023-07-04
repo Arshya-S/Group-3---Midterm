@@ -9,3 +9,8 @@ button.update-profile {
   width: 45%;
   align-self: center;
 }
+
+label.user-id,
+input#user-id {
+  display: none;
+}
