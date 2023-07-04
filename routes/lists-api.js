@@ -15,9 +15,5 @@ router.post('/', (req, res) => {
   return res.render('index');
 });
 
-router.get('/', (req, res) => {
-  listQueries.selectAll();
-  return res.send('hello');
-});
 
 module.exports = router;

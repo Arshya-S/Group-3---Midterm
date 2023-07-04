@@ -24,11 +24,21 @@
 <body>
   <%- include('partials/_header') %>
   <main>
-    <form method="POST" action="/lists" class="user-login">
-      <label for="email">Email</label></br>
-      <textarea name="task" id="task-input"></textarea></br>
-      <label for="password">Password</label></br>
-      <textarea name="task" id="task-input"></textarea></br>
+    <form method="POST" action="/login" class="user-login">
+
+      <label for="email">Email</label><br>
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter email"
+      /><br>
+      <label for="password">Password</label><br>
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+      /><br>
+
       <button type="submit" class="login">Login</button>
     </form>
   </main>
