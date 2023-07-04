@@ -12,7 +12,9 @@ router.post('/', (req, res) => {
     const user = data[0];
     req.session = {
       user: {
-        name: user.name
+        name: user.name,
+        email: user.email,
+        password: user.password
       }
     };
     res.redirect('/');

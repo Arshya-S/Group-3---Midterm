@@ -41,6 +41,7 @@ const listsApiRoutes = require('./routes/lists-api.js');
 const navItems = require('./routes/nav-items');
 const userLogin = require('./routes/login');
 const userLogout = require('./routes/logout');
+const userProfile = require('./routes/profile');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -53,6 +54,7 @@ app.use('/lists/1', navItems);
 app.use('/lists', listsApiRoutes);
 app.use('/login', userLogin);
 app.use('/logout', userLogout);
+app.use('/profile', userProfile);
 
 // Home page
 // Warning: avoid creating more routes in this file!
