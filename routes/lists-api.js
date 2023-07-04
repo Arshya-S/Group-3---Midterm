@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
     // category_id: auto categorize before sending to db,
   };
   listQueries.addTodo(testTask);
-  return res.render('index');
+  return res.render('index', { user: req.session['user'] });
 });
 
 
