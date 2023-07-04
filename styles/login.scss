@@ -1,0 +1,15 @@
+form.user-login {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-top: 8em;
+}
+
+button.login {
+  width: 45%;
+  align-self: center;
+}
+
+input {
+  width: 230px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Smart TODO - login</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/nav-bar.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/new-task.css" />
+  <link rel="stylesheet" href="/styles/list-items.css" />
+  <link rel="stylesheet" href="/styles/login.css" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+  <%- include('partials/_header') %>
+  <main>
+    <form method="POST" action="/login" class="user-login">
+
+      <label for="email">Email</label><br>
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter email"
+      /><br>
+      <label for="password">Password</label><br>
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+      /><br>
+
+      <button type="submit" class="login">Login</button>
+    </form>
+  </main>
+</body>
+
+</html>
