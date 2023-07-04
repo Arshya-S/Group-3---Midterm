@@ -1,13 +1,11 @@
 const db = require('../connection');
 
-
-
-// Query for getting specific user's To-Watch items
-const getUserWatch = (id) => {
+// Query for getting all a user's TODO items
+const getUserTODOList = (id) => {
   return db.query(`
   SELECT * FROM lists
-  WHERE user_id = $1
-  AND category_id = $2`,[id,1])
+  WHERE user_id = $1;
+  `, [id])
     .then(data => {
       return data.rows;
     })
@@ -16,5 +14,4 @@ const getUserWatch = (id) => {
     })
 }
 
-
-module.exports = { getUserWatch };
+module.exports = { getUserTODOList };

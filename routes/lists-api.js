@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const listQueries = require('../db/queries/lists');
 
-router.post('/', (req, res) => {
+router.post('/:id', (req, res) => {
   console.log(req.body);
   const testTask = {
     title: req.body.task,
