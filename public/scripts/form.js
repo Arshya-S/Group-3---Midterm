@@ -1,9 +1,9 @@
 $(() => {
-  const data = [
-    {
-      "task": "Watch spider-man"
-      }
-  ];
+  // const data = [
+  //   {
+  //     "task": "Watch spider-man"
+  //     }
+  // ];
 
   const renderTasks = function(tasks) {
     const $task = $('#to-do-container');
@@ -27,7 +27,7 @@ $(() => {
 
   $('.task-submission').on("submit", function(event) {
     event.preventDefault();
-    console.log("hi");
+    console.log("successful input");
     if ($('#task-input').val() === "" || $('#task-input').val() === null) {
       alert(`Please type in a task`);
       return;
@@ -36,7 +36,7 @@ $(() => {
     const data = $('.task-submission').serialize();
 
     $.ajax({
-      url: 'http://localhost:8080/lists',
+      url: '/lists/1/new',
       method: 'POST',
       data: data,
       success: () => {
@@ -50,10 +50,9 @@ $(() => {
 
   const loadTasks = () => {
     $.ajax({
-      url: 'http://localhost:8080/lists',
+      url: '/lists/1/new',
       method: 'GET',
       success: (data) => {
-
         renderTasks(data);
       }
     });
