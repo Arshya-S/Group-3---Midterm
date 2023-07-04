@@ -13,9 +13,10 @@ const getUserByEmailAndPassword = (body) => {
     .then(data => {
       return data.rows;
     })
-    .catch(error => {
-      return null;
-    });
+    // .catch(error => {
+    //   console.log(error);
+    //   throw error;
+    // });
 };
 
 module.exports = { getUserByEmailAndPassword };
