@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Smart TODO - profile</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/nav-bar.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/new-task.css" />
+  <link rel="stylesheet" href="/styles/list-items.css" />
+  <link rel="stylesheet" href="/styles/login.css" />
+  <link rel="stylesheet" href="/styles/profile.css" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+  <%- include('partials/_header') %>
+  <main>
+    <form method="POST" action="/profile" class="user-profile">
+      <label class="user-id" for="user-id">User ID</label></br>
+      <input
+        value="<%- user.id %>"
+        id="user-id"
+        name="id"
+        readonly
+      /></br>
+      <label for="user-name">Username</label></br>
+      <input
+        value="<%- user.name %>"
+        name="name"
+      /></br>
+      <label for="email">Email</label><br>
+      <input
+        value="<%- user.email %>"
+        type="email"
+        name="email"
+      /><br>
+      <label for="password">Change Password</label><br>
+      <input
+        type="password"
+        name="password"
+        value="<%- user.password %>"
+      /><br>
+
+      <button type="submit" class="update-profile">Update</button>
+    </form>
+  </main>
+</body>
+
+</html>

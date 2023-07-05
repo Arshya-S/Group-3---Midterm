@@ -4,7 +4,7 @@ const renderTodoList = (todoItems) => {
   for (const todoItem of todoItems) {
     const $item = $(`
     <div class="list-item">
-      <h2>Title: ${todoItem.title}</h2>
+      <h3 class="item-title">Title: ${todoItem.title}</h3>
     </div>
     `);
 
