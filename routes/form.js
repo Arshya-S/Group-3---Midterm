@@ -1,33 +1,26 @@
 const express = require('express');
-const router  = express.Router();
-const userListQueries = require('../db/queries/user-lists');
+const router = express.Router();
 const userAddTodo = require('../db/queries/getTodo');
 
-router.get('/', (req,res) => {
-  userAddTodo.getTodo(req.body)
-  .then(data => {
-    res.json(data);
-  })
-  .catch(err => {
-    res.status(500).json({ error: 'An error occurred' });
-  });
-})
-
 router.post('/', (req, res) => {
-  console.log("req.body", req.body)
-  const test = {
-    title: req.body,
-    user_id: 1,
-    category_id: 2,
+  if (!req.body.title) {
+    return res.status(400).json({ error: 'An error occurred' });
   }
-  userAddTodo.getTodo(test)
-  // userListQueries.getUserWatch(1)
-  .then(data => {
-      res.json(data);
+  const task = {
+    title: req.body.title,
+    user_id: 1,
+    category_id: 1,
+  };
+  userAddTodo.getTodo(task)
+    .then(data => {
+      console.log('succesful insert, data: ', data);
+      // res.redirect('http://localhost:8080/');
+      res.status(201).send();
     })
     .catch(err => {
+      console.log('error message: ', err);
       res.status(500).json({ error: 'An error occurred' });
     });
-})
+});
 
 module.exports = router;
