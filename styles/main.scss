@@ -24,9 +24,12 @@ main {
 }
 
 #to-do-container {
+  margin-top: 30px;
   width: 95%;
   overflow: auto;
-  border: 1px solid black;
+  padding-bottom: 20px;
+  border: 2px solid darkcyan;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
