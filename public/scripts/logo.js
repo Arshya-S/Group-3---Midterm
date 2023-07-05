@@ -39,7 +39,7 @@ $(() => {
         <h3 class="item-title">Title: ${todoItem.title}</h3>
         <div class="category">
           <h3 class="item-category"> Category: ${category} </h3>
-          <i class="fa-regular fa-pen-to-square"></i>&#160&#160
+          <button class="edit-button">Edit</button>
         </div>
       </div>
 
