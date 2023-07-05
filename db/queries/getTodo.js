@@ -1,11 +1,11 @@
 const db = require('../connection');
 
-const getTodo = (list) => {
+const getTodo = (task) => {
   return db
     .query(`
     INSERT INTO lists
     (title, user_id, category_id)
-    VALUES ($1, $2, $3) RETURNING *;`, [list.title, list.user_id, list.category_id])
+    VALUES ($1, $2, $3) RETURNING *;`, [task.title, task.user_id, task.category_id])
     .then(data => {
       return data.rows;
     })
