@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userAddTodo = require('../db/queries/getTodo');
+const taskCheck = require('../category_decision');
 
 router.post('/', (req, res) => {
   if (!req.body.title) {
@@ -9,7 +10,7 @@ router.post('/', (req, res) => {
   const task = {
     title: req.body.title,
     user_id: 1,
-    category_id: 1,
+    category_id: taskCheck(req.body.title)
   };
   userAddTodo.getTodo(task)
     .then(data => {
