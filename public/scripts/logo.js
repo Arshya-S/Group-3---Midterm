@@ -22,12 +22,28 @@ $(() => {
   // Function to create new HTML element and prepend it
   const createNewTodoElement = function(todoItem) {
     const $container = $('#to-do-container');
+    let category = '';
+    if (todoItem.category_id === 1) {
+      category = 'To Watch';
+    } else if (todoItem.category_id === 2) {
+      category = 'To Eat';
+    } else if (todoItem.category_id === 3) {
+      category = 'To Read';
+    } else if (todoItem.category_id === 4) {
+      category = 'To Buy';
+    }
 
     let $todo = `
     <div class="list-item">
-      <h3 class="item-title">Title: ${todoItem.title}</h3>
       <div>
-        <i class="fa-regular fa-pen-to-square"></i>&#160&#160
+        <h3 class="item-title">Title: ${todoItem.title}</h3>
+        <div class="category">
+          <h3 class="item-category"> Category: ${category} </h3>
+          <i class="fa-regular fa-pen-to-square"></i>&#160&#160
+        </div>
+      </div>
+
+      <div>
         <input type="checkbox" id="checkbox" name="checkbox">
         <label name="checkbox"></label>
       </div>
