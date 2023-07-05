@@ -2,6 +2,8 @@ const express = require('express');
 const router  = express.Router();
 const toWatchQuery = require('../db/queries/user-ToWatch');
 const toEatQuery = require('../db/queries/user-ToEat');
+const toReadQuery = require('../db/queries/user-ToRead');
+const toBuyQuery = require('../db/queries/user-ToBuy');
 const toDoQuery = require('../db/queries/user-ToDo');
 
 
@@ -35,5 +37,27 @@ router.get('/eat', (req, res) => {
     })
 
 });
+
+// Route for /lists/eat
+router.get('/read', (req, res) => {
+  const userID = req.session.user.id;
+  toReadQuery.getUserRead(userID)
+    .then(data => {
+      res.json(data);
+    })
+
+});
+
+// Route for /lists/buy
+router.get('/buy', (req, res) => {
+  const userID = req.session.user.id;
+  toBuyQuery.getUserBuy(userID)
+    .then(data => {
+      res.json(data);
+    })
+
+});
+
+
 
 module.exports = router;

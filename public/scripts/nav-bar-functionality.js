@@ -24,6 +24,30 @@ $(() => {
     });
   });
 
+  // To-Read button behaviour
+  const toRead = $('#to-read');
+  toRead.on('click', () => {
+    $.ajax({
+      url: '/lists/read',
+      type: 'GET',
+      success: (data => {
+        renderToRead(data);
+      })
+    });
+  });
+
+  // To-Read button behaviour
+  const toBuy = $('#to-buy');
+  toBuy.on('click', () => {
+    $.ajax({
+      url: '/lists/buy',
+      type: 'GET',
+      success: (data => {
+        renderToBuy(data);
+      })
+    });
+  });
+
 });
 
 
@@ -51,6 +75,34 @@ const renderToEat = (toEatItems) => {
     const $item = $(`
     <div class="list-item">
       <h3 class="item-title">To Eat Title: ${toEatItem.title}</h3>
+    </div>
+  `);
+
+  $container.append($item);
+  }
+}
+
+const renderToRead = (toReadItems) => {
+  const $container = $('#to-do-container').empty();
+
+  for (const toReadItem of toReadItems) {
+    const $item = $(`
+    <div class="list-item">
+      <h3 class="item-title">To Read Title: ${toReadItem.title}</h3>
+    </div>
+  `);
+
+  $container.append($item);
+  }
+}
+
+const renderToBuy = (toBuyItems) => {
+  const $container = $('#to-do-container').empty();
+
+  for (const toBuyItem of toBuyItems) {
+    const $item = $(`
+    <div class="list-item">
+      <h3 class="item-title">To Buy Title: ${toBuyItem.title}</h3>
     </div>
   `);
 

@@ -1,11 +1,11 @@
 const db = require('../connection');
 
-// Query for getting specific user's To-Eat items
-const getUserEat = (id) => {
+// Query for getting specific user's To-Read items
+const getUserBuy = (id) => {
   return db.query(`
   SELECT * FROM lists
   WHERE user_id = $1
-  AND category_id = $2`,[id,2])
+  AND category_id = $2`,[id,4])
     .then(data => {
       return data.rows;
     })
@@ -14,4 +14,4 @@ const getUserEat = (id) => {
     })
 }
 
-module.exports = { getUserEat };
+module.exports = { getUserBuy };
