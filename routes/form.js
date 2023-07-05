@@ -16,7 +16,6 @@ router.post('/', (req, res) => {
   userAddTodo.getTodo(task)
     .then(data => {
       console.log('succesful insert, data: ', data);
-      // res.redirect('/');
       res.status(201).send();
     })
     .catch(err => {

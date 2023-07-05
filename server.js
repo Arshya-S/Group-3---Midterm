@@ -35,9 +35,7 @@ app.use(cookieSession({
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const userApiRoutes = require('./routes/users-api');
-const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
-const listsApiRoutes = require('./routes/lists-api-temp.js');
 const listsAPI = require('./routes/lists-api');
 const userLogin = require('./routes/login');
 const userLogout = require('./routes/logout');
@@ -48,13 +46,9 @@ const createNew = require('./routes/form');
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/lists', listsAPI);
 app.use('/lists/new', createNew);
-// Note: mount other resources here, using the same pattern above
-
-// app.use('/lists', listsApiRoutes); -> using navItems for /lists
 app.use('/login', userLogin);
 app.use('/logout', userLogout);
 app.use('/profile', userProfile);
@@ -62,7 +56,6 @@ app.use('/profile', userProfile);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
 app.get('/', (req, res) => {
   console.log(req.session);
   res.render('index', { user: req.session['user'] });
