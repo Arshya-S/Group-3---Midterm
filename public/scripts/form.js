@@ -1,18 +1,50 @@
 $(() => {
-  $('.task-submission').submit( (event) => {
+  $('#task-submission').on('submit', (event) => {
+    console.log('hi');
     event.preventDefault();
     $.ajax({
-      url: '/lists/1/new',
+      url: '/lists/new',
       method: 'POST',
-      dataType: "json",
-      data: {title: $('#task-input').val()},
-      success: function(data) {
-        console.log('Successful AJAX request');
-        window.location.reload();
-      },
-      error: function(error) {
-        console.log('AJAX request error:', error);
+      data: { title: $('#task-input').val() },
+      success: () => {
+        console.log('123');
+        $('textarea').val('');
+        $.ajax({
+          url: '/lists',
+          method: 'GET',
+          success: (data => {
+            renderTodoLists(data);
+          })
+        });
       }
     });
   });
 });
+
+
+const createNewTodoElement = function(todoItem) {
+  const $container = $('#to-do-container');
+
+  let $todo = `
+    <div class="list-item">
+      <h3 class="item-title">Title: ${todoItem.title}</h3>
+      <div>
+        <i class="fa-regular fa-pen-to-square"></i>&#160&#160
+        <input type="checkbox" id="checkbox" name="checkbox">
+        <label name="checkbox"></label>
+      </div>
+    </div>
+  `;
+
+  // takes return value and appends it to the tweets container
+  $container.prepend($todo);
+};
+
+const renderTodoLists = (todoItems) => {
+  const $container = $('#to-do-container');
+  $container.empty();
+
+  for (const todoItem of todoItems) {
+    createNewTodoElement(todoItem);
+  }
+};
