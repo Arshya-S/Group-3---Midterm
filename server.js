@@ -37,8 +37,8 @@ app.use(cookieSession({
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
-const listsApiRoutes = require('./routes/lists-api.js');
-const navItems = require('./routes/nav-items');
+const listsApiRoutes = require('./routes/lists-api-temp.js');
+const listsAPI = require('./routes/lists-api');
 const userLogin = require('./routes/login');
 const userLogout = require('./routes/logout');
 const userProfile = require('./routes/profile');
@@ -50,10 +50,11 @@ const createNew = require('./routes/form')
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
-app.use('/lists/1', navItems);
+app.use('/lists', listsAPI);
 app.use('/lists/1/new', createNew)
 // Note: mount other resources here, using the same pattern above
-app.use('/lists', listsApiRoutes);
+
+// app.use('/lists', listsApiRoutes); -> using navItems for /lists
 app.use('/login', userLogin);
 app.use('/logout', userLogout);
 app.use('/profile', userProfile);

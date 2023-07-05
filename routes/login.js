@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
 
   loginQueries.getUserByEmailAndPassword(req.body).then(data => {
-    console.log({ data });
     const user = data[0];
     req.session = {
       user: {

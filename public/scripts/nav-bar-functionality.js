@@ -1,3 +1,4 @@
+// Function for rendering in HTML into container
 const renderToWatch = (toWatchItems) => {
   const $container = $('#to-do-container').empty();
 
@@ -14,11 +15,11 @@ const renderToWatch = (toWatchItems) => {
 
 
 $(() => {
+  // To-Watch button behaviour
   const toWatch = $('#to-watch');
-
   toWatch.on('click', () => {
     $.ajax({
-      url: 'http://localhost:8080/lists/1/watch',
+      url: '/lists/watch',
       type: 'GET',
       success: (data => {
         renderToWatch(data);
@@ -26,5 +27,13 @@ $(() => {
     })
 
   });
+
+  // // To-Eat button behaviour
+  // const toEat = $('#to-eat');
+  // toEat.on('click', () => {
+  //   $.ajax({
+  //     url: ''
+  //   });
+  // });
 
 });

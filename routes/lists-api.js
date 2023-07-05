@@ -1,19 +1,26 @@
 const express = require('express');
-const router = express.Router();
-const listQueries = require('../db/queries/lists');
+const router  = express.Router();
+const toWatchQuery = require('../db/queries/user-ToWatch');
+const toDoQuery = require('../db/queries/user-ToDo');
 
-router.post('/:id', (req, res) => {
-  console.log(req.body);
-  const testTask = {
-    title: req.body.task,
-    user_id: 1,
-    category_id: 1,
-    // user_id: check id and validate user,
-    // category_id: auto categorize before sending to db,
-  };
-  listQueries.addTodo(testTask);
-  return res.render('index', { user: req.session['user'] });
-});
 
+// Route for /lists/
+router.get('/', (req, res) => {
+  const userID = req.session.user.id;
+  toDoQuery.getUserTODOList(userID)
+    .then(data => {
+      res.json(data);
+    })
+})
+
+
+// Route for /lists/watch
+router.get('/watch', (req, res) => {
+  const userID = req.session.user.id;
+  toWatchQuery.getUserWatch(userID)
+    .then(data => {
+      res.json(data);
+    })
+})
 
 module.exports = router;
