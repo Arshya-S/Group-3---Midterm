@@ -6,6 +6,7 @@ const toReadQuery = require('../db/queries/user-ToRead');
 const toBuyQuery = require('../db/queries/user-ToBuy');
 const toDoQuery = require('../db/queries/user-ToDo');
 const testTaskCompleted = require('../db/queries/mark-completed');
+const changeCategory = require('../db/queries/changeCategory');
 
 
 
@@ -16,6 +17,21 @@ router.get('/', (req, res) => {
     .then(data => {
       res.json(data);
     });
+});
+
+
+router.post('/', (req, res) => {
+  const newCategoryID = req.body.categoryID;
+  const itemTitle = req.body.itemTitle;
+
+  console.log(newCategoryID)
+  console.log(itemTitle)
+
+  changeCategory.changeCategory(newCategoryID,itemTitle)
+    .then(data => {
+      console.log('routing data: ', data);
+    })
+
 });
 
 
