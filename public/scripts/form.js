@@ -27,14 +27,29 @@ const createNewTodoElement = function(todoItem) {
 
   let $todo = `
     <div class="list-item">
+    <div>
       <h3 class="item-title">Title: ${todoItem.title}</h3>
-      <div>
-        <i class="fa-regular fa-pen-to-square"></i>&#160&#160
-        <input type="checkbox" id="checkbox" name="checkbox">
-        <label name="checkbox"></label>
+      <div class="category">
+        <h3 class="item-category"> Category:  </h3>
+        <button class="edit-button">Edit</button>
       </div>
     </div>
+
+    <div>
+      <input type="checkbox" id="checkbox" name="checkbox">
+      <label name="checkbox"></label>
+    </div>
+  </div>
   `;
+
+  // <div class="list-item">
+  //   <h3 class="item-title">Title: ${todoItem.title}</h3>
+  //   <div>
+  //     <i class="fa-regular fa-pen-to-square"></i>&#160&#160
+  //     <input type="checkbox" id="checkbox" name="checkbox">
+  //     <label name="checkbox"></label>
+  //   </div>
+  // </div>
 
   // takes return value and appends it to the tweets container
   $container.prepend($todo);
