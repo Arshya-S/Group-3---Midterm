@@ -59,7 +59,7 @@ const renderToWatch = (toWatchItems) => {
 
   for (const toWatchItem of toWatchItems) {
     const $item = $(`
-    <div class="list-item">
+    <div class="list-item" id="container">
       <div>
         <h3 class="item-title">Title: ${toWatchItem.title}</h3>
         <div class="category">
@@ -84,7 +84,7 @@ const renderToEat = (toEatItems) => {
 
   for (const toEatItem of toEatItems) {
     const $item = $(`
-    <div class="list-item">
+    <div class="list-item" id="container">
     <div>
       <h3 class="item-title">Title: ${toEatItem.title}</h3>
       <div class="category">
@@ -109,7 +109,7 @@ const renderToRead = (toReadItems) => {
 
   for (const toReadItem of toReadItems) {
     const $item = $(`
-    <div class="list-item">
+    <div class="list-item" id="container">
     <div>
       <h3 class="item-title">Title: ${toReadItem.title}</h3>
       <div class="category">
@@ -134,7 +134,7 @@ const renderToBuy = (toBuyItems) => {
 
   for (const toBuyItem of toBuyItems) {
     const $item = $(`
-    <div class="list-item">
+    <div class="list-item" id="container">
     <div>
       <h3 class="item-title">Title: ${toBuyItem.title}</h3>
       <div class="category">
