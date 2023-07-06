@@ -1,13 +1,14 @@
 .list-item {
   margin-top: 20px;
   height: 100px;
-  width: 80%;
+  width: 55%;
   border: 2px solid black;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 1em;
 }
 
 .item-title {
@@ -35,6 +36,3 @@
 #category-input {
   height: 25px;
 }
-
-
-
