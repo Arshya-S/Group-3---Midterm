@@ -1,10 +1,11 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 const toWatchQuery = require('../db/queries/user-ToWatch');
 const toEatQuery = require('../db/queries/user-ToEat');
 const toReadQuery = require('../db/queries/user-ToRead');
 const toBuyQuery = require('../db/queries/user-ToBuy');
 const toDoQuery = require('../db/queries/user-ToDo');
+const testTaskCompleted = require('../db/queries/mark-completed');
 
 
 
@@ -34,7 +35,7 @@ router.get('/eat', (req, res) => {
   toEatQuery.getUserEat(userID)
     .then(data => {
       res.json(data);
-    })
+    });
 
 });
 
@@ -44,7 +45,7 @@ router.get('/read', (req, res) => {
   toReadQuery.getUserRead(userID)
     .then(data => {
       res.json(data);
-    })
+    });
 
 });
 
@@ -54,8 +55,18 @@ router.get('/buy', (req, res) => {
   toBuyQuery.getUserBuy(userID)
     .then(data => {
       res.json(data);
-    })
+    });
 
+});
+
+// For testing
+router.post('/complete', (req, res) => {
+  const isComplete = JSON.parse(req.body.isComplete);
+  if (isComplete) {
+    testTaskCompleted.taskCompleted({ title: req.body.title }).then(data => console.log({ data }));
+  } else {
+    testTaskCompleted.taskNotCompleted({ title: req.body.title }).then(data => console.log({ data }));
+  }
 });
 
 
