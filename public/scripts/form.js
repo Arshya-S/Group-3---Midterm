@@ -1,6 +1,5 @@
 $(() => {
   $('#task-submission').on('submit', (event) => {
-    console.log('hi');
     event.preventDefault();
     $.ajax({
       url: '/lists/new',
@@ -42,6 +41,7 @@ const createNewTodoElement = function(todoItem) {
       </div>
     </div>
   `;
+
 
   // takes return value and appends it to the tweets container
   $container.prepend($todo);
