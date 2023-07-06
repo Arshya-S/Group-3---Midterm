@@ -51,7 +51,8 @@ const createNewTodoElement = function(todoItem) {
   const checkbox = $('#checkbox');
   const container = $('#container');
 
-  checkbox.on('change', function() {
+  checkbox.on('change', function(event) {
+    event.preventDefault();
     if (this.checked) {
       $.ajax({
         url: '/lists/complete',

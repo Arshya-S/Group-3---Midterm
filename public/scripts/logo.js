@@ -49,8 +49,14 @@ $(() => {
 
     const checkbox = $('#checkbox');
     const container = $('#container');
+    const isChecked = todoItem.status;
+    if (isChecked) {
+      checkbox.prop('checked', true);
+      container.css('background-color', 'gray');
+    }
 
-    checkbox.on('change', function() {
+    checkbox.on('change', function(event) {
+      event.preventDefault();
       if (this.checked) {
         $.ajax({
           url: '/lists/complete',
@@ -69,8 +75,6 @@ $(() => {
         container.css('background-color', '');
       }
     });
-
-
 
 
   };
