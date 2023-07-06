@@ -6,7 +6,6 @@ const taskCompleted = (body) => {
   SET status = $1
   WHERE title = $2;`;
   const queryParams = [true, body.title];
-  // console.log(queryString, queryParams);
   console.log('body:', body);
   return db
     .query(queryString, queryParams)
@@ -21,7 +20,6 @@ const taskNotCompleted = (body) => {
   SET status = $1
   WHERE title = $2;`;
   const queryParams = [false, body.title];
-  // console.log(queryString, queryParams);
   console.log('body:', body);
   return db
     .query(queryString, queryParams)
