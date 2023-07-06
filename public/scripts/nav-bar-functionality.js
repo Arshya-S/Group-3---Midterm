@@ -68,9 +68,9 @@ const renderToWatch = (toWatchItems) => {
           </div>
       </div>
 
-      <div>
-        <input type="checkbox" id="checkbox-${toWatchItem.id}" name="checkbox">
-        <label name="checkbox"></label>
+      <div class="complete-checkbox">
+        <label name="checkbox">Complete:&nbsp;</label>
+        <input type="checkbox" class="checkbox" id="checkbox-${toWatchItem.id}" name="checkbox">
       </div>
     </div>
   `);
@@ -125,9 +125,9 @@ const renderToEat = (toEatItems) => {
       </div>
     </div>
 
-    <div>
-      <input type="checkbox" id="checkbox-${toEatItem.id}" name="checkbox">
-      <label name="checkbox"></label>
+    <div class="complete-checkbox">
+      <label name="checkbox">Complete:&nbsp;</label>
+      <input type="checkbox" class="checkbox" id="checkbox-${toEatItem.id}" name="checkbox">
     </div>
   </div>
   `);
@@ -182,9 +182,9 @@ const renderToRead = (toReadItems) => {
       </div>
     </div>
 
-    <div>
-      <input type="checkbox" id="checkbox-${toReadItem.id}" name="checkbox">
-      <label name="checkbox"></label>
+    <div class="complete-checkbox">
+      <label name="checkbox">Complete:&nbsp;</label>
+      <input type="checkbox" class="checkbox" id="checkbox-${toReadItem.id}" name="checkbox">
     </div>
   </div>
     `);
@@ -238,9 +238,9 @@ const renderToBuy = (toBuyItems) => {
       </div>
     </div>
 
-    <div>
-      <input type="checkbox" id="checkbox-${toBuyItem.id}" name="checkbox">
-      <label name="checkbox"></label>
+    <div class="complete-checkbox">
+      <label name="checkbox">Complete:&nbsp;</label>
+      <input type="checkbox" class="checkbox" id="checkbox-${toBuyItem.id}" name="checkbox">
     </div>
   </div>
     `);

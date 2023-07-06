@@ -35,9 +35,9 @@ const createNewTodoElement = function(todoItem) {
         </div>
       </div>
 
-      <div>
-        <input type="checkbox" id="checkbox" name="checkbox">
-        <label name="checkbox"></label>
+      <div class="complete-checkbox">
+        <label name="checkbox">Complete:&nbsp;</label>
+        <input type="checkbox" class="checkbox" id="checkbox" name="checkbox">
       </div>
     </div>
   `;
