@@ -18,17 +18,17 @@ router.post('/', (req, res) => {
     console.log('task:', task);
     userAddTodo.getTodo(task)
       .then(data => {
-        console.log('succesful insert, data: ', data);
+        console.log('successful insert, data: ', data);
         // res.redirect('/');
         res.status(201).send();
       })
-      .catch(err => {
-        console.log('error message: ', err);
-        res.status(500).json({ error: 'An error occurred' });
-      });
+      // .catch(err => {
+      //   console.log('error message: ', err);
+      //   res.status(500).json({ error: 'An error occurred' });
+      // });
   })
   // const task = {
-  //   title: req.body.title,
+    // title: req.body.title,
   //   user_id: req.session.user.id,
   //   category_id:
   // };
