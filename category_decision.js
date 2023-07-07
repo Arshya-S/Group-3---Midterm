@@ -9,46 +9,15 @@ const taskKeywordCheck = (task) => {
   // category_id = 4, to_buy;
   // category_id = 5, uncategorized
 
-  if (
-    lowerCaseTask.includes("film") ||
-    lowerCaseTask.includes("movie") ||
-    lowerCaseTask.includes("watch") ||
-    lowerCaseTask.includes("tv") ||
-    lowerCaseTask.includes("show")
-  ) {
+  if (lowerCaseTask.includes("film" || "movie" || "watch" || "tv" || "show")) {
     category_id = 1;
-  } else if (
-    lowerCaseTask.includes("dish") ||
-    lowerCaseTask.includes("eat") ||
-    lowerCaseTask.includes("food") ||
-    lowerCaseTask.includes("recipe") ||
-    lowerCaseTask.includes("vegetables") ||
-    lowerCaseTask.includes("fruit") ||
-    lowerCaseTask.includes("dairy") ||
-    lowerCaseTask.includes("restaurant") ||
-    lowerCaseTask.includes("cafe")
-  ) {
+  } else if (lowerCaseTask.includes("dish" || "eat" || "food" || "recipe" || "vegetable" || "fruit" || "dairy" || "restaurant" || "cafe")) {
     category_id = 2;
-  } else if (
-    lowerCaseTask.includes("read") ||
-    lowerCaseTask.includes("book") ||
-    lowerCaseTask.includes("journal") ||
-    lowerCaseTask.includes("textbook") ||
-    lowerCaseTask.includes("novel")
-  ) {
+  } else if (lowerCaseTask.includes("read" || "book" || "journal" || "textbook" || "novel")) {
     category_id = 3;
-  } else if (
-    lowerCaseTask.includes("buy") ||
-    lowerCaseTask.includes("price") ||
-    lowerCaseTask.includes("retail") ||
-    lowerCaseTask.includes("store") ||
-    lowerCaseTask.includes("purchase") ||
-    lowerCaseTask.includes("new")
-  ) {
+  } else if (lowerCaseTask.includes("buy" || "price" || "retail" || "store" || "purchase" || "new")) {
     category_id = 4;
   }
-
-
   return category_id;
 };
 
@@ -79,10 +48,8 @@ const taskCheck = (task) => {
       request(watch, function(error, response, body) {
         if (error) throw new Error(error);
 
-        if (body.includes("movie") ||
-          body.includes("film") ||
-          body.includes("tvseries")) {
-          console.log('watch', body);
+        if (body.includes("movie" || "film" || "tvseries")) {
+          // console.log('watch', body);
           category_id = 1;
         }
 
@@ -90,69 +57,62 @@ const taskCheck = (task) => {
         const queryString = task.split(' ').join('%20');
         request(`https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${queryString}&format=json`, function(error, response, body) {
           if (error) throw new Error(error);
-          console.log(body);
+          // console.log(body);
 
-          if (body.includes("book") ||
-            body.includes("ISBN") ||
-            body.includes("novel") ||
-            body.includes("published")) {
-            console.log('read', body);
+          if (body.includes("book" || "ISBN" || "novel" || "published")) {
+            // console.log('read', body);
             category_id = 3;
           }
           // Amazon api (buy)
-          const buy = {
+          // const buy = {
+          //   method: 'GET',
+          //   url: 'https://amazon23.p.rapidapi.com/product-search',
+          //   qs: {
+          //     query: taskString,
+          //     country: 'US'
+          //   },
+          //   headers: {
+          //     'X-RapidAPI-Key': '04e00cc54dmshdaa5f3cce6a7db8p118ebdjsn5c1a4e9c425f',
+          //     'X-RapidAPI-Host': 'amazon23.p.rapidapi.com'
+          //   }
+          // };
+
+          const eat = {
             method: 'GET',
-            url: 'https://amazon23.p.rapidapi.com/product-search',
-            qs: {
-              query: taskString,
-              country: 'US'
-            },
-            headers: {
-              'X-RapidAPI-Key': '04e00cc54dmshdaa5f3cce6a7db8p118ebdjsn5c1a4e9c425f',
-              'X-RapidAPI-Host': 'amazon23.p.rapidapi.com'
-            }
+            url: `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${queryString}&format=json`,
           };
 
-          request(buy, function(error, response, body) {
+          request(eat, function(error, response, body) {
             if (error) throw new Error(error);
 
-            console.log(body);
-            if (body.includes("price")) {
-              console.log('buy', body);
+            const data = JSON.parse(body);
+            const searchList = data.query.search;
+            const snippets = searchList.map(search => search.snippet);
+            snippets.forEach(snippet => {
+              if (snippet.includes("dish" || "eat" || "food" || "recipe" || "vegetable" || "fruit" || "dairy" || "restaurant" || 'cafe')) {
+                category_id = 2;
+              }
+            });
+
+            if (!category_id) {
               category_id = 4;
             }
+
             resolve(category_id);
+            // request(buy, function(error, response, body) {
+            //   if (error) throw new Error(error);
+
+            //   // console.log(body);
+            //   if (body.includes("price")) {
+            //     // console.log('buy', body);
+            //     category_id = 4;
+            //   }
+
+            //   });
           });
+
         });
       });
-
-      // Yelp api (eat) DID NOT GET A CHANCE TO IMPLEMENT YET
-
-      // const eat = {
-      //   method: 'GET',
-      //   url: 'https://yelp-com.p.rapidapi.com/search/nearby/53.631611/-113.323975',
-      //   qs: {
-      //     radius: '40',
-      //     term: 'Restaurants',
-      //     offset: '0'
-      //   },
-      //   headers: {
-      //     'X-RapidAPI-Key': '04e00cc54dmshdaa5f3cce6a7db8p118ebdjsn5c1a4e9c425f',
-      //     'X-RapidAPI-Host': 'yelp-com.p.rapidapi.com'
-      //   }
-      // };
-
-      // request(eat, function (error, response, body) {
-      //   if (error) throw new Error(error);
-
-      //   console.log(body);
-
-
-      //   if (body.includes("task")) {
-      //         category_id = 2;
-      //       }
-      //       console.log('Category ID:', category_id);
-
     };
   });
 };
