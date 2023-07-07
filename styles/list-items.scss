@@ -1,14 +1,14 @@
 .list-item {
   margin-top: 20px;
   height: 100px;
-  width: 55%;
+  width: 50%;
   border: 2px solid black;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
+  padding: 2em 1em 2em 1em;
 }
 
 .item-title {
@@ -35,4 +35,35 @@
 
 #category-input {
   height: 25px;
+}
+
+button.edit-button,
+button.update {
+  border: none;
+  background-color: darkcyan;
+  height: 23px;
+  width: 45px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.update {
+  width: 65px;
+}
+
+textarea#category-input {
+  border: none;
+  border-bottom: 2px solid black;
+  width: 45%;
+  height: 20px;
+  resize: none;
+  outline: none;
+  overflow: hidden;
+  background: none;
+  padding-bottom: 20px;
+}
+
+h2 {
+  margin: 25px 0 0 0;
 }

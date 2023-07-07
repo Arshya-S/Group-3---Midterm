@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
   });
   setTimeout(() => {
     res.redirect('logout');
-  }, 2000);
+  }, 1000);
 });
 
 

@@ -7,7 +7,13 @@ form.user-profile {
 
 button.update-profile {
   width: 45%;
+  height: 30px;
   align-self: center;
+  border: none;
+  background-color: darkcyan;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 label.user-id,

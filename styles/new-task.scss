@@ -3,17 +3,33 @@
   height: 70px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-end;
+  font-size: 18px;
 }
 
 #task-input {
   border: none;
-  border-bottom: 2.5px solid black;
-  width: 65%;
+  border-bottom: 2px solid black;
+  width: 45%;
   height: 20px;
   resize: none;
   outline: none;
   overflow: hidden;
   background: none;
+  padding-bottom: 20px;
+}
+
+button#create-new-task {
+  border: none;
+  background-color: darkcyan;
+  height: 30px;
+  width: 80px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a.enter-new-task {
+  font-size: 80px;
 }

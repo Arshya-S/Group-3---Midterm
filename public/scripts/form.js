@@ -20,15 +20,13 @@ $(() => {
   });
 });
 
-
-
 const createNewTodoElement = function(todoItem) {
   const categories = ['To Watch', 'To Eat', 'To Read', 'To Buy'];
   const $container = $('#to-do-container');
   let $todo = `
     <div class="list-item" id="container">
       <div>
-        <h3 class="item-title">Title: ${todoItem.title}</h3>
+        <h2 class="item-title">Title: ${todoItem.title}</h2>
         <div class="category">
           <h3 class="item-category"> Category: ${categories[todoItem.category_id - 1]} </h3>
           <button class="edit-button">Edit</button>
@@ -42,10 +40,7 @@ const createNewTodoElement = function(todoItem) {
     </div>
   `;
 
-
-  // takes return value and appends it to the tweets container
   $container.prepend($todo);
-
 
   //checkbox feature
   const checkbox = $('#checkbox');
@@ -73,7 +68,6 @@ const createNewTodoElement = function(todoItem) {
   });
 
 };
-
 
 const renderTodoLists = (todoItems) => {
   const $container = $('#to-do-container');

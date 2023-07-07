@@ -10,10 +10,10 @@ $(() => {
 
     const $categoryChange = $(`
     <form id="new-category-form">
-      <textarea name="new-category" id="category-input"></textarea>
-      <button type="submit">Create</button>
+    &nbsp;<textarea name="new-category" id="category-input"></textarea>&nbsp;
+      <button class="update" type="submit">Update</button>
     </form>
-    `)
+    `);
 
 
     $button.replaceWith($categoryChange);
@@ -39,20 +39,20 @@ $(() => {
       $.ajax({
         url: '/lists',
         method: 'POST',
-        data: {categoryID: categoryID, itemTitle: $itemTitle},
+        data: { categoryID: categoryID, itemTitle: $itemTitle },
         success: (() => {
           console.log('ajax success');
         })
 
 
-      })
+      });
 
 
-      $category.text('Category: ' +  $userInput);
-      $categoryChange.replaceWith($button)
+      $category.text('Category: ' + $userInput);
+      $categoryChange.replaceWith($button);
 
 
-    })
+    });
   });
 
 });

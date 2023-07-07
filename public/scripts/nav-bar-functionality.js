@@ -47,11 +47,7 @@ $(() => {
       })
     });
   });
-
 });
-
-
-// Functions for rendering in HTML into container
 
 const renderToWatch = (toWatchItems) => {
 
@@ -61,7 +57,7 @@ const renderToWatch = (toWatchItems) => {
     const $item = $(`
     <div class="list-item" id="container-${toWatchItem.id}">
       <div>
-        <h3 class="item-title">Title: ${toWatchItem.title}</h3>
+        <h2 class="item-title">Title: ${toWatchItem.title}</h2>
         <div class="category">
           <h3 class="item-category">Category: To Watch</h3>
           <button class="edit-button">Edit</button>
@@ -95,7 +91,6 @@ const renderToWatch = (toWatchItems) => {
           method: 'POST',
           data: { title: toWatchItem.title, isComplete: true },
         });
-        // If checkbox is checked, set the background color to gray
         container.css('background-color', 'gray');
       } else {
         $.ajax({
@@ -103,7 +98,6 @@ const renderToWatch = (toWatchItems) => {
           method: 'POST',
           data: { title: toWatchItem.title, isComplete: false },
         });
-        // If checkbox is unchecked, remove the background color
         container.css('background-color', '');
       }
     });
@@ -118,7 +112,7 @@ const renderToEat = (toEatItems) => {
     const $item = $(`
     <div class="list-item" id="container-${toEatItem.id}">
     <div>
-      <h3 class="item-title">Title: ${toEatItem.title}</h3>
+      <h2 class="item-title">Title: ${toEatItem.title}</h2>
       <div class="category">
         <h3 class="item-category"> Category: To Eat</h3>
         <button class="edit-button">Edit</button>
@@ -152,7 +146,6 @@ const renderToEat = (toEatItems) => {
           method: 'POST',
           data: { title: toEatItem.title, isComplete: true },
         });
-        // If checkbox is checked, set the background color to gray
         container.css('background-color', 'gray');
       } else {
         $.ajax({
@@ -160,7 +153,6 @@ const renderToEat = (toEatItems) => {
           method: 'POST',
           data: { title: toEatItem.title, isComplete: false },
         });
-        // If checkbox is unchecked, remove the background color
         container.css('background-color', '');
       }
     });
@@ -175,7 +167,7 @@ const renderToRead = (toReadItems) => {
     const $item = $(`
     <div class="list-item" id="container-${toReadItem.id}">
     <div>
-      <h3 class="item-title">Title: ${toReadItem.title}</h3>
+      <h2 class="item-title">Title: ${toReadItem.title}</h2>
       <div class="category">
         <h3 class="item-category"> Category: To Read</h3>
         <button class="edit-button">Edit</button>
@@ -209,7 +201,6 @@ const renderToRead = (toReadItems) => {
           method: 'POST',
           data: { title: toReadItem.title, isComplete: true },
         });
-        // If checkbox is checked, set the background color to gray
         container.css('background-color', 'gray');
       } else {
         $.ajax({
@@ -217,7 +208,6 @@ const renderToRead = (toReadItems) => {
           method: 'POST',
           data: { title: toReadItem.title, isComplete: false },
         });
-        // If checkbox is unchecked, remove the background color
         container.css('background-color', '');
       }
     });
@@ -231,7 +221,7 @@ const renderToBuy = (toBuyItems) => {
     const $item = $(`
     <div class="list-item" id="container-${toBuyItem.id}">
     <div>
-      <h3 class="item-title">Title: ${toBuyItem.title}</h3>
+      <h2 class="item-title">Title: ${toBuyItem.title}</h2>
       <div class="category">
         <h3 class="item-category"> Category: To Buy</h3>
         <button class="edit-button">Edit</button>
@@ -264,7 +254,6 @@ const renderToBuy = (toBuyItems) => {
           method: 'POST',
           data: { title: toBuyItem.title, isComplete: true },
         });
-        // If checkbox is checked, set the background color to gray
         container.css('background-color', 'gray');
       } else {
         $.ajax({
@@ -272,7 +261,6 @@ const renderToBuy = (toBuyItems) => {
           method: 'POST',
           data: { title: toBuyItem.title, isComplete: false },
         });
-        // If checkbox is unchecked, remove the background color
         container.css('background-color', '');
       }
     });
