@@ -1,6 +1,6 @@
 ## About
 
-A todo list that can auto-categorize items into one of four categories. Users can view their todo list items by category, mark them as complete and change the category of an item manually.
+A todo list that can auto-categorize items into one of four categories. Users can view their todo list items by category, mark them as complete and change the category of an item manually. (Images Below!)
 
 
 ## Getting Started
