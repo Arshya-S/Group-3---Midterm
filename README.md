@@ -22,3 +22,5 @@ A todo list that can auto-categorize items into one of four categories. Users ca
 - Express
 
 ## Images
+![](https://github.com/Arshya-S/Smart-TODO-List/blob/master/Images/img_one.png?raw=true)
+![](https://github.com/Arshya-S/Smart-TODO-List/blob/master/Images/img_two.png?raw=true)
