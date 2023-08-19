@@ -1,7 +1,16 @@
 ## About
 
-A todo list that can auto-categorize items into one of four categories. Users can view their todo list items by category, mark them as complete and change the category of an item manually. (Images Below!)
+A todo list that can auto-categorize items into one of four categories. Users can view their todo list items by category, mark them as complete and change the category of an item manually. 
 
+## Images
+![](https://github.com/Arshya-S/Smart-TODO-List/blob/master/Images/img_one.png?raw=true)
+![](https://github.com/Arshya-S/Smart-TODO-List/blob/master/Images/img_two.png?raw=true)
+
+## Dependencies
+- Node 10.x or above
+- NPM 5.x or above
+- PG 6.x
+- Express
 
 ## Getting Started
 
@@ -15,12 +24,5 @@ A todo list that can auto-categorize items into one of four categories. Users ca
 6. Visit `http://localhost:8080/`
 
 
-## Dependencies
-- Node 10.x or above
-- NPM 5.x or above
-- PG 6.x
-- Express
 
-## Images
-![](https://github.com/Arshya-S/Smart-TODO-List/blob/master/Images/img_one.png?raw=true)
-![](https://github.com/Arshya-S/Smart-TODO-List/blob/master/Images/img_two.png?raw=true)
+
